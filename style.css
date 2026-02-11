@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0a0a0a;
+  color: #e0e0e0;
+  font-family: 'Fira Code', monospace;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Scanline overlay */
+.scanline {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 999;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 255, 65, 0.015) 2px,
+    rgba(0, 255, 65, 0.015) 4px
+  );
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 80px 24px;
+}
+
+/* Header */
+header {
+  margin-bottom: 60px;
+}
+
+.glitch {
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-weight: 700;
+  color: #00ff41;
+  text-shadow:
+    0 0 10px rgba(0, 255, 65, 0.8),
+    0 0 40px rgba(0, 255, 65, 0.3);
+  animation: flicker 4s infinite;
+}
+
+.tagline {
+  margin-top: 12px;
+  font-size: 1rem;
+  color: #666;
+}
+
+.typed::after {
+  content: 'welcome to my corner of the internet';
+}
+
+.cursor {
+  animation: blink 1s step-end infinite;
+  color: #00ff41;
+}
+
+/* Terminal window */
+.terminal {
+  background: #111;
+  border: 1px solid #333;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow:
+    0 0 20px rgba(0, 255, 65, 0.05),
+    0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.terminal-header {
+  background: #1a1a1a;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid #333;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.dot.red { background: #ff5f57; }
+.dot.yellow { background: #ffbd2e; }
+.dot.green { background: #28c840; }
+
+.terminal-title {
+  margin-left: 8px;
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.terminal-body {
+  padding: 24px;
+  line-height: 1.8;
+  font-size: 0.95rem;
+}
+
+.prompt {
+  color: #00ff41;
+  font-weight: 700;
+}
+
+.highlight {
+  color: #00ff41;
+  font-weight: 700;
+}
+
+.cursor-blink {
+  animation: blink 1s step-end infinite;
+  color: #00ff41;
+}
+
+/* Footer */
+footer {
+  margin-top: 60px;
+  text-align: center;
+  color: #333;
+  font-size: 0.8rem;
+}
+
+/* Animations */
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+@keyframes flicker {
+  0%, 95%, 100% { opacity: 1; }
+  96% { opacity: 0.8; }
+  97% { opacity: 1; }
+  98% { opacity: 0.9; }
+}
