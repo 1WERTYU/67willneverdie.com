@@ -68,6 +68,26 @@ header {
   color: #00ff41;
 }
 
+/* Navigation */
+.nav-links {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.nav-links a {
+  color: #666;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #00ff41;
+  text-shadow: 0 0 8px rgba(0, 255, 65, 0.4);
+}
+
 /* Terminal window */
 .terminal {
   background: #111;
